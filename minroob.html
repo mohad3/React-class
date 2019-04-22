@@ -48,8 +48,8 @@
                 document.getElementById(num).style.backgroundColor="orange";
                }
                else if(array[i][j]==0){
-                    var sumc = array[i][j-1] + array[i][j+1] + array[i-1][j-1] + array[i-1][j]+ array[i-1][j+1]+ array[i+1][j-1] + array[i+1][j]+ array[i+1][j+1];
-                    var sumcc = sumc.toString();
+                    var majmoo = array[i][j-1] + array[i][j+1] + array[i-1][j-1] + array[i-1][j]+ array[i-1][j+1]+ array[i+1][j-1] + array[i+1][j]+ array[i+1][j+1];
+                    var majmoof = majmoo.toString();
                     document.getElementById(num).innerHTML = sumcc.fontcolor("blue");
                     document.getElementById(num).style.backgroundColor="gray";
                }
