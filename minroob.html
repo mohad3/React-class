@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<body>
+  
+        <button id="11" class="button" onclick=myfunction(1,1)>click</button>
+        <button id="12" class="button" onclick=myfunction(1,2)>click</button>
+        <button id="13" class="button" onclick=myfunction(1,3)>click</button>
+        <button id="14" class="button" onclick=myfunction(1,4)>click</button>
+    <br/>
+   
+        <button id="21" class="button" onclick=myfunction(2,1)>click</button>
+        <button id="22" class="button" onclick=myfunction(2,2)>click</button>
+        <button id="23" class="button" onclick=myfunction(2,3)>click</button>
+        <button id="24" class="button" onclick=myfunction(2,4)>click</button>
+   <br/>
+    
+        <button id="31" class="button" onclick=myfunction(3,1)>click</button>
+        <button id="32" class="button" onclick=myfunction(3,2)>click</button>
+        <button id="33" class="button" onclick=myfunction(3,3)>click</button>
+        <button id="34" class="button" onclick=myfunction(3,4)>click</button>
+    <br/>
+   
+        <button id="41" class="button" onclick=myfunction(4,1)>click</button>
+        <button id="42" class="button" onclick=myfunction(4,2)>click</button>
+        <button id="43" class="button" onclick=myfunction(4,3)>click</button>
+        <button id="44" class="button" onclick=myfunction(4,4)>click</button>
+<script>
+          var array = [[0],[0],[0],[0],[0],[0]];
+            for(var k=0;k<6;k++) {
+                array[0][k]=0;
+                array[5][k]=0;
+                array[k][0]=0;
+                array[k][5]=0;
+            }
+            for (var i=1;i<5;i++) {
+                for (var j=1;j<5;j++) {
+                    array[i][j] = Math.round(Math.random())
+                    var num= i.toString()+ j.toString()
+                }
+            }
+            console.log("array",array);
+            function myfunction(a,b) { 
+                i=a;
+                j=b;
+                num=a.toString()+b.toString()
+               if(array[i][j]==1){
+                document.getElementById(num).innerHTML=("bomb!").fontcolor("black");
+                document.getElementById(num).style.backgroundColor="orange";
+               }
+               else if(array[i][j]==0){
+                    var sumc = array[i][j-1] + array[i][j+1] + array[i-1][j-1] + array[i-1][j]+ array[i-1][j+1]+ array[i+1][j-1] + array[i+1][j]+ array[i+1][j+1];
+                    var sumcc = sumc.toString();
+                    document.getElementById(num).innerHTML = sumcc.fontcolor("blue");
+                    document.getElementById(num).style.backgroundColor="gray";
+               }
+              
+            }
+
+</script>
+</body>
+</html>
